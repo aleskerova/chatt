@@ -1,0 +1,14 @@
+* { font-family: monospace, Arial; }
+body { color: #eee; }
+input { margin: 20px; padding: 5px 10px; width: 70%; }
+
+#obj {
+	color: #FF0000;
+	font-size: 30px;
+}
+
+
+.colortext {
+	color: #2E9AFE;
+	font-size: 30px;
+}
