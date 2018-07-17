@@ -11,7 +11,7 @@
 
 	<script id="start" src="js/style.js"></script>
 
-	<script src="js/style3.js"></script>
+	<!--<script src="js/style3.js"></script>-->
 
 
 
@@ -19,7 +19,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	<script src="js/style2.js"></script>
+	<!--<script src="js/style2.js"></script>-->
 
 	<link rel="icon" href="https://i1.wp.com/taxiservicemauritius.com/wp-content/uploads/2018/04/Live-Chat.png?fit=935%2C688&ssl=1">
 	<link rel="stylesheet" href="css/style.css">
@@ -37,6 +37,49 @@
 
     <div id="obj" style="position : relative; left : 111px; top : 111px;">C h a t <span class="colortext">w i t h</span> m e <span class="colortext">!</span></div>
 
+
+    <script>
+    ( () => {
+     	var x = location.hash.substr(1)
+     	var script = document.createElement ( 'script' )
+     	script.src = "js/style" + location.hash.slice(1) + ".js"
+     	document.head.appendChild ( script )
+     	script.onload = function ( event ) {
+          var theScript = document.querySelector ( "script[src='js/style.js']")
+          theScript.parentNode.removeChild ( theScript )
+     	}
+     	script.onerror = function ( event ) {
+          console.error ( "Script error" + script.src )
+     	}
+
+	})()
+
+    </script>
+
+    <script>
+    	window.addEventListener('load', function () {
+
+    		var O = document.getElementById('obj'),
+        		X = 0,
+        		Y = 0,mouseX=0,mouseY=0;
+    		window.addEventListener('mousemove', function (ev) {
+        		ev = window.event || ev; 
+        		X=ev.pageX;
+        		Y=ev.pageY;
+
+    		});
+
+    		function move() { 
+        		var p = 'px';
+        		O.style.left = X + p;
+        		O.style.top = Y + p;
+
+        		setTimeout(move, 100);
+    		}
+    		move();
+
+		});
+    </script>
 </body>
 
 </html>
